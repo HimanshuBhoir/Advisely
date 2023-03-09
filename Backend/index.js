@@ -1,12 +1,19 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
+const bodyParser = require('body-parser')
+const AdminUser = require('./Admin/Routes/Auth')
 
 require('dotenv').config()
+app.use(bodyParser.json())
 
 app.get('/',(req,res) => {
     res.send('Hello World')
 })
+
+// Routes and MiddleWare
+
+app.use('/admin', AdminUser)
 
 // Mongoose Connection
 mongoose.connect(process.env.MONGO_URI)
