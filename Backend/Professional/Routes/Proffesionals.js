@@ -1,1 +1,0 @@
-// use these to post verified and unverified professionals to admin and consumer 

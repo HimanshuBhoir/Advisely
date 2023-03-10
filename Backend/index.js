@@ -3,6 +3,8 @@ const mongoose = require('mongoose')
 const app = express()
 const bodyParser = require('body-parser')
 const AdminUser = require('./Admin/Routes/Auth')
+const ProfessionalUser = require('./Professional/Routes/Auth')
+const Profession = require('./Professional/Routes/Professions')
 
 require('dotenv').config()
 app.use(bodyParser.json())
@@ -14,6 +16,8 @@ app.get('/',(req,res) => {
 // Routes and MiddleWare
 
 app.use('/admin', AdminUser)
+app.use('/professional', ProfessionalUser)
+app.use('/profession', Profession)
 
 // Mongoose Connection
 mongoose.connect(process.env.MONGO_URI)
