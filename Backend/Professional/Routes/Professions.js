@@ -22,6 +22,8 @@ router.delete('/removeprof', async (req,res) => {
     }
 })
 
+// Add myprofessions, can be done agter jwt by header
+
 router.get('/verified',async (req,res) => {
     try{
         const profession = await Profession.find({verified:true})
@@ -49,5 +51,13 @@ router.put('/verify',async (req,res) => {
     }
 })
 
+router.get('/:id',async (req,res) => {
+    try{
+        const profession = await Profession.findById(req.params.id)
+        res.json(profession)
+    }catch(error){
+        res.json(error)
+    }
+})
 
 module.exports = router;
