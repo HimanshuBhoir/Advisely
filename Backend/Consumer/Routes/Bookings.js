@@ -1,10 +1,10 @@
 const express = require('express')
 const router = express.Router()
 const Booking = require('../Models/Bookings')
-
+const ConsumerRequire = require('../Middleware/ConsumerRequire')
 // create routes
 
-router.post('/book',async (req,res) => {
+router.post('/book', ConsumerRequire, async (req,res) => {
     try {
         const booking = await Booking.create(req.body)
         res.json(booking)
@@ -13,7 +13,7 @@ router.post('/book',async (req,res) => {
     }
 })
 
-router.delete('/unbook', async (req,res) => {
+router.delete('/unbook', ConsumerRequire,  async (req,res) => {
     try {
         const booking = await Booking.deleteOne(req.body)
         res.json(booking)

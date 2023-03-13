@@ -1,18 +1,7 @@
 const mongoose = require('mongoose')
+const {ObjectId} = mongoose.Schema.Types
 
 const Professions = mongoose.Schema({
-    name:{
-        type: String,
-        require: true,
-    },
-    email:{
-        type: String,
-        require: true,
-    },
-    no:{
-        type: Number,
-        require: true,
-    },
     professionname:{
         type: String,
         require: true,
@@ -32,6 +21,10 @@ const Professions = mongoose.Schema({
         type: String,
         require: true,
     },
+    postedById:{
+        type: ObjectId,
+        ref: "professional"
+    }
 });
 
 module.exports = mongoose.model("Professions",Professions)

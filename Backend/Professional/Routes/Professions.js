@@ -1,10 +1,11 @@
 const express = require('express')
 const router = express.Router()
 const Profession = require('../Models/Professions')
+const ProfessionalRequire = require('../Middleware/ProffesionalRequire')
 
 // create routes
 
-router.post('/addprof',async (req,res) => {
+router.post('/addprof',ProfessionalRequire, async (req,res) => {
     try {
         const profession = await Profession.create(req.body)
         res.json(profession)
@@ -13,7 +14,7 @@ router.post('/addprof',async (req,res) => {
     }
 })
 
-router.delete('/removeprof', async (req,res) => {
+router.delete('/removeprof',ProfessionalRequire, async (req,res) => {
     try {
         const profession = await Profession.deleteOne(req.body)
         res.json(profession)
@@ -22,7 +23,14 @@ router.delete('/removeprof', async (req,res) => {
     }
 })
 
-// Add myprofessions, can be done agter jwt by header
+router.get('/myprofessions',ProfessionalRequire, async (req,res) => {
+    try{
+        const profession = await Profession.find({postedById:req.professional._id})
+        res.json(profession)
+    }catch(error){
+        res.json(error)
+    }
+})
 
 router.get('/verified',async (req,res) => {
     try{

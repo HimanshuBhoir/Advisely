@@ -1,13 +1,26 @@
 const express = require('express')
 const router = express.Router()
 const User = require('../Models/User')
+const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
+
+require('dotenv').config()
 
 // create routes
 
 router.get('/signin',async (req,res) => {
     try{
-        const user = await User.find(req.body)
-        res.json(user)
+        const {adminuid, adminpass} = req.body
+        User.findOne({adminuid:adminuid})
+        .then(savedUser => {
+            if(!savedUser)  return res.status(422).json({error:"Inval UID"})
+            bcrypt.compare(adminpass,savedUser.adminpass)
+            .then(match => {
+                const token = jwt.sign({_id:savedUser._id},process.env.JWT)
+                if(match)   res.json({token})
+                else    return res.status(422).json({error:"Wrong Password"})
+            })
+        })
     }catch(error){
         res.json(error)
     }
@@ -17,8 +30,16 @@ router.get('/signin',async (req,res) => {
 
 // router.post('/signup',async (req,res) => {
 //     try {
-//         const user = await User.create(req.body)
-//         res.json(user)
+//         const {adminuid, adminpass} = req.body
+//         bcrypt.hash(adminpass,7)
+//         .then(hashedpass => {
+//             const user = new User({
+//                 adminuid,
+//                 adminpass:hashedpass
+//             })
+//             user.save()
+//             res.json(user)
+//         })
 //     } catch (error) {
 //         res.json(error)
 //     }

@@ -7,16 +7,16 @@ require('dotenv').config()
 module.exports = (req, res, next) => {
     const {authorization} = req.headers
     if(!authorization){
-        return res.status(401).json({error:"Not signed in"})
+        return res.status(401).json({error:"you must be logged in"})
     }
     const token = authorization.replace("Bearer ","")
     jwt.verify(token, process.env.JWT,(error,payload) => {
         if(error){
-            return res.status(401).json({error:"Wrong Token"})
+            return res.status(401).json({error:"you must be logged in"})
         }
         const {_id} = payload
         User.findById(_id).then(userdata => {
-            req.professional = userdata
+            req.consumer = userdata
             next()
         })
     })
