@@ -1,21 +1,15 @@
 const mongoose = require('mongoose')
+const {ObjectId} = mongoose.Schema.Types
+
 
 const Book = mongoose.Schema({
-    servicename:{
-        type: String,
-        require: true,
+    professionId:{
+        type: ObjectId,
+        ref: "service",
     },
-    serviceid:{
-        type: String,
-        require: true,
-    },
-    professionalname:{
-        type: String,
-        require: true,
-    },
-    consumerid:{
-        type: String,
-        require: true,
+    consumerId:{
+        type: ObjectId,
+        ref: "consumer",
     },
     appointmenttime:{
         type: Date,
