@@ -23,7 +23,7 @@ const Professions = mongoose.Schema({
     },
     postedById:{
         type: ObjectId,
-        ref: "professional"
+        ref: "Professional"
     }
 });
 

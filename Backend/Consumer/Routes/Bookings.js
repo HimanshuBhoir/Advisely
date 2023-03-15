@@ -29,9 +29,18 @@ router.delete('/unbook', ConsumerRequire || ProfessionalRequire,  async (req,res
     }
 })
 
-router.get('/mybooking',ConsumerRequire, async (req,res) => {
+router.get('/consumerbooking',ConsumerRequire, async (req,res) => {
     try{
         const bookings = await Booking.find({consumerId:req.consumer._id})
+        .populate({
+            path: 'professionId',
+            select: '_id professionname postedById',
+            populate: {
+              path: 'postedById',
+              select: '_id name email'
+            },
+          })
+        .populate('consumerId','_id name email')
         res.json(bookings)
     }catch(error){
         res.json(error)

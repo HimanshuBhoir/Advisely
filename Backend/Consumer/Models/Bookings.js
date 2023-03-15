@@ -5,11 +5,11 @@ const {ObjectId} = mongoose.Schema.Types
 const Book = mongoose.Schema({
     professionId:{
         type: ObjectId,
-        ref: "service",
+        ref: "Professions",
     },
     consumerId:{
         type: ObjectId,
-        ref: "consumer",
+        ref: "Consumer",
     },
     appointmenttime:{
         type: Date,

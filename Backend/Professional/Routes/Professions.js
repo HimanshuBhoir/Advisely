@@ -7,14 +7,14 @@ const ProfessionalRequire = require('../Middleware/ProffesionalRequire')
 
 router.post('/addprof',ProfessionalRequire, async (req,res) => {
     try {
-        const {professionname, document, verified, rating, description, postedById} = req.body
+        const {professionname, document, verified, rating, description} = req.body
         const profession = new Profession({
             professionname,
             document,
             verified,
             rating,
             description,
-            postedById:req.professional._id
+            postedById:req.professional
         })
         await profession.save()
         res.json(profession)
@@ -43,16 +43,16 @@ router.get('/myprofessions',ProfessionalRequire, async (req,res) => {
 
 router.get('/verified',async (req,res) => {
     try{
-        const profession = await Profession.find({verified:true})
+        const profession = await Profession.find({verified:true}).populate('postedById','_id name email')
         res.json(profession)
     }catch(error){
         res.json(error)
     }
 })
 
-router.get('/unverified',async (req,res) => {
+router.get('/unverified', async (req,res) => {
     try{
-        const profession = await Profession.find({verified:false})
+        const profession = await Profession.find({verified:false}).populate('postedById','_id name email')
         res.json(profession)
     }catch(error){
         res.json(error)
