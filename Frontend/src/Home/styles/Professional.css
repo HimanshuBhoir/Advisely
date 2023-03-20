@@ -1,0 +1,14 @@
+.high{
+    width: 100%;
+    height: 50%;
+    background-color: rgb(202, 217, 217);
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.professional{
+    
+    display: flex;
+    justify-content: center;
+
+}

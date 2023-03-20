@@ -2,8 +2,6 @@ const express = require('express')
 const router = express.Router()
 const Profession = require('../Models/Professions')
 const ProfessionalRequire = require('../Middleware/ProffesionalRequire')
-const ConsumerRequire = require('../../Consumer/Middleware/ConsumerRequire')
-const AdminRequire = require('../../Admin/Middleware/AdminRequire')
 
 // create routes
 
@@ -37,34 +35,31 @@ router.delete('/removeprof',ProfessionalRequire, async (req,res) => {
 router.get('/myprofessions',ProfessionalRequire, async (req,res) => {
     try{
         const profession = await Profession.find({postedById:req.professional._id})
-        .populate()
         res.json(profession)
     }catch(error){
         res.json(error)
     }
 })
 
-router.get('/verified',ConsumerRequire,async (req,res) => {
+router.get('/verified',async (req,res) => {
     try{
-        const profession = await Profession.find({verified:true})
-        .populate('postedById','_id name email')
+        const profession = await Profession.find({verified:true}).populate('postedById','_id name email')
         res.json(profession)
     }catch(error){
         res.json(error)
     }
 })
 
-router.get('/unverified', AdminRequire,async (req,res) => {
+router.get('/unverified', async (req,res) => {
     try{
-        const profession = await Profession.find({verified:false})
-        .populate('postedById','_id name email')
+        const profession = await Profession.find({verified:false}).populate('postedById','_id name email')
         res.json(profession)
     }catch(error){
         res.json(error)
     }
 })
 
-router.put('/verify', AdminRequire,async (req,res) => {
+router.put('/verify',async (req,res) => {
     try {
         const profession = await Profession.findOneAndUpdate(req.body, {verified:true})
         res.json(profession)
@@ -73,7 +68,7 @@ router.put('/verify', AdminRequire,async (req,res) => {
     }
 })
 
-router.get('/:id', ConsumerRequire || AdminRequire,async (req,res) => {
+router.get('/:id',async (req,res) => {
     try{
         const profession = await Profession.findById(req.params.id)
         res.json(profession)

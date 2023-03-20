@@ -1,0 +1,26 @@
+.logs{
+    padding: 15px;
+    background-color: aliceblue;
+    /* margin: 1px; */
+}
+
+.lgs{
+    padding: 10px;
+    margin: 15px;
+    width: 25vw;
+    height: 25vh;
+    background-color: white;
+    overflow-y: hidden;
+}
+
+.title{
+    font-weight: 500px;
+    /* font-style: italic; */
+}
+
+.srvcdesc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}

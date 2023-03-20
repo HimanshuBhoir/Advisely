@@ -1,0 +1,84 @@
+.navbar{
+    display: flex;
+    padding: 15px;
+    align-items: center;
+    justify-content: space-between;
+    overflow-x: hidden;
+}
+
+ul{
+    margin-left: 5vw;
+    color: black;
+}
+
+.nav {
+    align-items: center;
+    display: flex;
+    padding: 0;
+  }
+  
+
+.link{
+    color: rgb(3, 3, 83);
+    width: cover;
+    font-weight: 600;
+    font-size: 20px;
+    margin-right: 1rem;
+}
+
+.link{
+    display: inline;
+    text-decoration: none;
+    text-decoration-color: black;
+    margin: 5px;
+    padding: 5px;
+    position: relative;
+    color:rgb(3, 3, 83);
+    
+}
+  
+  .link::after {
+    content: ""; 
+    position: absolute; 
+    bottom: -1px; 
+    left: 0; 
+    width: 100%; 
+    height: 3px; 
+    color: rgb(3, 3, 83);
+    background-color: rgb(3, 3, 83); 
+    transform: scaleX(0); 
+    transition: transform 0.3s ease-in-out; 
+  }
+  
+  .link:hover::after {
+    transform: scaleX(1); /* Show the line by scaling it to its original size */
+  }
+
+.logo{
+    color: rgb(3, 3, 83);
+    font-size: 40px;
+  }
+
+.btn {
+    background-color: rgb(3, 3, 83);
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .btn:hover {
+    background-color: white;
+    color: rgb(3, 3, 83);
+  }
+  
+  .btn:active {
+    transform: scale(0.95);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  

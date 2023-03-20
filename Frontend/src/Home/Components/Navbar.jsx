@@ -1,17 +1,19 @@
 import React from 'react'
-import { BrowserRouter, Route } from 'react-router-dom';
-import Header from './Header';
-import Services from './Services';
-import About from './Professional';
-
+import { Link } from 'react-router-dom'
+import '../styles/Navbar.css'
 
 function Navbar() {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <Route exact path="/" component={Header} />
-      <Route path="/about" component={Services} />
-    </BrowserRouter>
+    <nav className='navbar'>
+      <h1 className='logo'>Advisely</h1>
+      <ul className='nav' type='none'>
+        <li><Link to = "/" className='link'>Home</Link></li>
+        <li><Link to = "/services" className='link'>Services</Link></li>
+        <li><Link to = "/about" className='link'>Pricing</Link></li>
+        <li><Link to = "/about" className='link'>About</Link></li>
+        <li><button className='btn'>Signin</button></li>
+      </ul>
+    </nav>
   )
 }
 

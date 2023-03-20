@@ -3,7 +3,7 @@ import Navbar from './Navbar';
 import '../styles/Header.css';
 
 const images = [
-  'url(https://images.pexels.com/photos/4050336/pexels-photo-4050336.jpeg?auto=compress&cs=tinysrgb&w=400)',
+  'url(https://plus.unsplash.com/premium_photo-1667511047126-59a532a27747?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODV8fGxhcHRvcCUyMGFuZCUyMHByb2Zlc3Npb25hbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60)',
   'url(https://images.pexels.com/photos/7245921/pexels-photo-7245921.jpeg?auto=compress&cs=tinysrgb&w=600)',
   'url(https://images.pexels.com/photos/4173363/pexels-photo-4173363.jpeg?auto=compress&cs=tinysrgb&w=400)'
 ];
@@ -23,9 +23,8 @@ function Header() {
   };
 
   return (
-    <header style={backgroundStyle} className="header">
+    <header style={backgroundStyle} className="card header">
       <Navbar />
-      <h1>Welcome to my website!</h1>
     </header>
   );
 }

@@ -1,11 +1,13 @@
-import React from 'react'
+import React from 'react';
+import '../styles/Services.css';
 
 function Services() {
+
   return (
-    <div>
+    <div className='card services'>
       Services
     </div>
-  )
+  );
 }
 
-export default Services
+export default Services;
