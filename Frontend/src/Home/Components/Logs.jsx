@@ -1,6 +1,9 @@
 import React from 'react'
 import '../styles/Logs.css'
 import {useNavigate} from 'react-router-dom'
+import PersonIcon from '@mui/icons-material/Person';
+import AdminPanelSettingsTwoToneIcon from '@mui/icons-material/AdminPanelSettingsTwoTone';
+import BadgeRoundedIcon from '@mui/icons-material/BadgeRounded';
 
 function Logs() {
 
@@ -12,18 +15,21 @@ function Logs() {
       <h3>Ready to login here?</h3>
 
       <button className='card lgs' onClick={() => {navigate("/services")}}>
-        <h3 className='title'>I am a consumer seeking to benefit from online services and connect with trusted service providers</h3>
-        <text className='desc'>A user who seeks to benefit from online services and connect with trusted service providers for their personal or business needs.</text>
+        <PersonIcon/>
+        <h3 className='title'>Consumer</h3>
+        <text className='desc'>Seeking to benefit from online services and connect with trusted service providers</text>
       </button>
 
       <button className='card lgs' onClick={() => {navigate("/services")}}>
-        <h3 className='title'>I am a professional seeking to provide my services and freelancing expertise to clients around the world through online platforms</h3>
-        <text className='desc'>A freelancer or service provider who offers their skills and expertise to clients around the world through online platforms</text>
+        <BadgeRoundedIcon/>
+        <h3 className='title'>Professional</h3>
+        <text className='desc'>Freelancer or service provider offering his skills and expertise to clients around the world</text>
       </button>
 
-      <button className='card lgs' onClick={() => {navigate("/services")}}>
-        <h3 className='title'>I am an admin responsible for verifying global services and ensuring the highest quality standards for our users</h3>
-        <text className='desc'>An administrator who is responsible for managing and overseeing the operations of an online platform, verifying services and ensuring quality standards are met.</text>
+      <button className='card lgs' onClick={() => {navigate("/admin")}}>
+        <AdminPanelSettingsTwoToneIcon/>
+        <h3 className='title'>Admin </h3>
+        <text className='desc'>Verifying global services and ensuring the highest quality standards for our users</text>
       </button>
 
       <div className='card srvcdesc'>

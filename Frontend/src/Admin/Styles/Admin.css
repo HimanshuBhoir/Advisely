@@ -1,0 +1,11 @@
+.admin{
+    display: flex;
+}
+
+.side{
+    left: 0px;
+}
+
+.compo{
+    right: 0px;
+}
