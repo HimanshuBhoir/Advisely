@@ -1,9 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Services.css';
 import Slider from 'react-slick'
 
 function Services() {
 
+  const navigate = useNavigate()
   const arr = ["one","two","three","four","five","six"]
 
   const settings = {
@@ -24,7 +26,7 @@ function Services() {
         {
           arr.map((item) => {
             return (
-              <button className='card srvc'>
+              <button className='card srvc' onClick={() => navigate('/consumer/service')}>
                 <img className="sim" src="" alt='none'/>
                 <h1>{item}</h1>
                 <p>{item}{item}{item}Thisi sis me HIanshidn d and d I cann do anything I want Thisi I cann do anything I want Thisi</p>

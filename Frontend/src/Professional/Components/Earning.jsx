@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Csignup() {
+function Earning() {
   return (
     <div>
-      Consumer signup
+      Earnings
     </div>
   )
 }
 
-export default Csignup
+export default Earning

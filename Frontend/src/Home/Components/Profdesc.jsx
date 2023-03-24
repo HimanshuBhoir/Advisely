@@ -1,7 +1,11 @@
 import React from 'react'
+import {useNavigate} from 'react-router-dom'
 import '../styles/Profdesc.css'
 
 function Profdesc() {
+
+  const navigate = useNavigate()
+
   return (
     <div className='card profdesc'>
       <div className='des'>
@@ -11,7 +15,7 @@ function Profdesc() {
 </p>
       <br />
       <br />
-      <button className='btn'>Get Started</button>
+      <button className='btn' onClick={() => navigate('/professional')}>Get Started</button>
 
       </div>
       <div>

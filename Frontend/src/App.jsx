@@ -4,6 +4,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Services from './Home/Components/Services'
 import Admin from './Admin/Screens/Admin'
 import ASignin from './Admin/Screens/Asignin'
+import PSignin from './Professional/Screens/Psignin'
+import PSignup from './Professional/Screens/Psignup'
+import CSignin from './Consumer/Screens/Csignin'
+import CSignup from './Consumer/Screens/Csignup'
 import Professional from './Professional/Screens/Professional'
 import Consumer from './Consumer/Screens/Consumer'
 
@@ -16,6 +20,10 @@ function App() {
           <Route path = "/services" element={<Services />} />
           <Route path = "/about" element={<Home />} />
           <Route path="/adminsignin" element={<ASignin />} />
+          <Route path="/professionalsignin" element={<PSignin />} />
+          <Route path="/professionalsignup" element={<PSignup />} />
+          <Route path="/consumersignin" element={<CSignin />} />
+          <Route path="/consumersignup" element={<CSignup />} />
           <Route path="/admin/*" element={<Admin />} />
           <Route path = "/consumer/*" element={<Consumer />} />
           <Route path = "/professional/*" element={<Professional />} />

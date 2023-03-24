@@ -3,8 +3,7 @@ import '../styles/Logs.css'
 import {useNavigate} from 'react-router-dom'
 import PersonIcon from '@mui/icons-material/Person';
 import AdminPanelSettingsTwoToneIcon from '@mui/icons-material/AdminPanelSettingsTwoTone';
-import BadgeRoundedIcon from '@mui/icons-material/BadgeRounded';
-
+import SchoolIcon from '@mui/icons-material/School';
 function Logs() {
 
   const navigate = useNavigate()
@@ -21,7 +20,7 @@ function Logs() {
       </button>
 
       <button className='card lgs' onClick={() => {navigate("/professional")}}>
-        <BadgeRoundedIcon/>
+        <SchoolIcon/>
         <h3 className='title'>Professional</h3>
         <text className='desc'>Freelancer or service provider offering his skills and expertise to clients around the world</text>
       </button>
@@ -43,7 +42,7 @@ function Logs() {
 </p>
         <br />
         <br />
-        <button className='btn'>Get Started</button>
+        <button className='btn' onClick={() => navigate('/consumer')}>Get Started</button>
 
         </div>
       </div>

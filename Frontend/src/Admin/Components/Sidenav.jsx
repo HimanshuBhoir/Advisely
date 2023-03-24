@@ -1,15 +1,23 @@
 import React from 'react'
-import { Sidebar,Menu,MenuItem,useProSidebar,} from 'react-pro-sidebar'
-import { Link } from 'react-router-dom'
+import { Sidebar,Menu,MenuItem,useProSidebar,SubMenu} from 'react-pro-sidebar'
+import { Link, useNavigate } from 'react-router-dom'
 import DehazeIcon from '@mui/icons-material/Dehaze';
 import PersonPinIcon from '@mui/icons-material/PersonPin';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import GppMaybeIcon from '@mui/icons-material/GppMaybe';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import LogoutIcon from '@mui/icons-material/Logout';
 import '../Styles/Sidenav.css'
 
 function Sidenav() {
 
+  const navigate = useNavigate()
   const { collapseSidebar } = useProSidebar();
+
+  const handleLogout = () => {
+    localStorage.setItem('jwt','')
+    navigate('/adminsignin')
+  }
 
   return (
     <div>
@@ -28,6 +36,9 @@ function Sidenav() {
               <MenuItem component={<Link to ="/admin/" />} icon={<GppMaybeIcon/>}>Unerified</MenuItem>
               <MenuItem component={<Link to ="/admin/verified" />} icon={<VerifiedIcon/>}>Verified</MenuItem>
               <MenuItem component={<Link to ="/admin/profile" />} icon={<PersonPinIcon/>}>Profile</MenuItem>
+              <SubMenu label="More" icon={<MoreHorizIcon/>}>
+                <MenuItem onClick={handleLogout} icon={<LogoutIcon/>}>Logout</MenuItem>
+              </SubMenu>
           </Menu>
       </Sidebar>
     </div>
