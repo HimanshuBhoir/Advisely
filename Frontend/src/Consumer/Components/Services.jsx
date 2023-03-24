@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Confirmed() {
+function Services() {
   return (
     <div>
-      Confirmed
+      Services
     </div>
   )
 }
 
-export default Confirmed
+export default Services

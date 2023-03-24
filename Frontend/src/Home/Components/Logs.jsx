@@ -14,13 +14,13 @@ function Logs() {
 
       <h3>Ready to login here?</h3>
 
-      <button className='card lgs' onClick={() => {navigate("/services")}}>
+      <button className='card lgs' onClick={() => {navigate("/consumer")}}>
         <PersonIcon/>
         <h3 className='title'>Consumer</h3>
         <text className='desc'>Seeking to benefit from online services and connect with trusted service providers</text>
       </button>
 
-      <button className='card lgs' onClick={() => {navigate("/services")}}>
+      <button className='card lgs' onClick={() => {navigate("/professional")}}>
         <BadgeRoundedIcon/>
         <h3 className='title'>Professional</h3>
         <text className='desc'>Freelancer or service provider offering his skills and expertise to clients around the world</text>

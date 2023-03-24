@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Confirmed() {
+function Bookings() {
   return (
     <div>
-      Confirmed
+      Booking
     </div>
   )
 }
 
-export default Confirmed
+export default Bookings

@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Confirmed() {
+function Csignin() {
   return (
     <div>
-      Confirmed
+      Consumer Signin
     </div>
   )
 }
 
-export default Confirmed
+export default Csignin

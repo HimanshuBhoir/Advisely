@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Confirmed() {
+function Pricing() {
   return (
     <div>
-      Confirmed
+      Pricing
     </div>
   )
 }
 
-export default Confirmed
+export default Pricing
