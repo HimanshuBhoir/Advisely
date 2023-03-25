@@ -7,6 +7,7 @@ import VerifiedIcon from '@mui/icons-material/Verified';
 import GppMaybeIcon from '@mui/icons-material/GppMaybe';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import LogoutIcon from '@mui/icons-material/Logout';
+import HomeIcon from '@mui/icons-material/Home';
 import '../Styles/Sidenav.css'
 
 function Sidenav() {
@@ -37,6 +38,7 @@ function Sidenav() {
               <MenuItem component={<Link to ="/admin/verified" />} icon={<VerifiedIcon/>}>Verified</MenuItem>
               <MenuItem component={<Link to ="/admin/profile" />} icon={<PersonPinIcon/>}>Profile</MenuItem>
               <SubMenu label="More" icon={<MoreHorizIcon/>}>
+                <MenuItem onClick={() => navigate('/')} icon={<HomeIcon/>}>Go To</MenuItem>
                 <MenuItem onClick={handleLogout} icon={<LogoutIcon/>}>Logout</MenuItem>
               </SubMenu>
           </Menu>

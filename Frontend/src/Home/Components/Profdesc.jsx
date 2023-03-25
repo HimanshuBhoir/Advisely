@@ -7,7 +7,7 @@ function Profdesc() {
   const navigate = useNavigate()
 
   return (
-    <div className='card profdesc'>
+    <div className='card profdesc' id='professional'>
       <div className='des'>
           <h2>Online Freelancing: A Growing Trend for Professionals Seeking Flexibility and Opportunity in the Digital Age.</h2>
           <br />

@@ -23,8 +23,8 @@ function Header() {
   };
 
   return (
-    <header style={backgroundStyle} className="card header">
-      <Navbar />
+    <header style={backgroundStyle} className="card header" id='header'>
+    <Navbar/>
     </header>
   );
 }

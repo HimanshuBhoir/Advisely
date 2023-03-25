@@ -9,7 +9,7 @@ function Logs() {
   const navigate = useNavigate()
 
   return (
-    <div className='container logs'>
+    <div className='container logs' id='logs'>
 
       <h3>Ready to login here?</h3>
 

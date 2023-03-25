@@ -1,0 +1,45 @@
+.appt{
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    /* padding: 30px; */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.apt{
+    margin-left: 15px;
+    margin-bottom: 0;
+    width: 30%;
+    height: 35%;
+    background-color: whitesmoke;
+    display: flex;
+    align-items: left;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.aaimg{
+    width: 45%;
+    height: 100%;
+    /* background-color: rgb(51, 148, 24); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.aimg{
+    width: 90%;
+    height: 90%;
+    image-rendering: pixelated;
+    object-fit: cover;
+    border-radius: 10px;
+    
+}
+
+.bd{
+    padding: 10px;
+    text-align: center;
+}

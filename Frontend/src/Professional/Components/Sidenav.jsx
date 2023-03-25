@@ -9,6 +9,8 @@ import HomeIcon from '@mui/icons-material/Home';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import LogoutIcon from '@mui/icons-material/Logout';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
+import SchoolIcon from '@mui/icons-material/School';
+
 // import '../Styles/Sidenav.css'
 
 function Sidenav() {
@@ -35,12 +37,13 @@ function Sidenav() {
                   <h2>Advisely</h2>
               </MenuItem>
               
-              <MenuItem component={<Link to ="/professional/" />} icon={<HomeIcon/>}>Myprofession</MenuItem>
+              <MenuItem component={<Link to ="/professional/" />} icon={<SchoolIcon/>}>Myprofession</MenuItem>
               <MenuItem component={<Link to ="/professional/confirmed" />} icon={<VerifiedIcon/>}>Confirmed</MenuItem>
-              <MenuItem component={<Link to ="/professional/appointments" />} icon={<BookOnlineIcon/>}>Appointmentss</MenuItem>
-              <MenuItem component={<Link to ="/professional/profile" />} icon={<PersonPinIcon/>}>Profile</MenuItem>
+              <MenuItem component={<Link to ="/professional/appointments" />} icon={<BookOnlineIcon/>}>Appointments</MenuItem>
               <MenuItem component={<Link to ="/professional/earning" />} icon={<CurrencyRupeeIcon/>}>Earning</MenuItem>
+              <MenuItem component={<Link to ="/professional/profile" />} icon={<PersonPinIcon/>}>Profile</MenuItem>
               <SubMenu label="More" icon={<MoreHorizIcon/>}>
+                <MenuItem onClick={() => navigate('/')} icon={<HomeIcon/>}>Go To</MenuItem>
                 <MenuItem onClick={handleLogout} icon={<LogoutIcon/>}>Logout</MenuItem>
               </SubMenu>
           </Menu>

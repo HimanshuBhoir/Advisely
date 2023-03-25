@@ -1,11 +1,13 @@
-.admin{
+.admin {
     display: flex;
-}
-
-.side{
-    left: 0px;
-}
-
-.compo{
-    right: 0px;
-}
+    /* overflow: visible; */
+    position: relative;
+  }
+  
+  .side {
+    background-color: #080628 !important;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }

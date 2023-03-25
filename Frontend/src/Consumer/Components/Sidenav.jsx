@@ -8,6 +8,8 @@ import SellIcon from '@mui/icons-material/Sell';
 import LocalMallIcon from '@mui/icons-material/LocalMall';// import '../Styles/Sidenav.css'
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import LogoutIcon from '@mui/icons-material/Logout';
+import HomeIcon from '@mui/icons-material/Home';
+
 
 function Sidenav() {
   
@@ -38,6 +40,7 @@ function Sidenav() {
               <MenuItem component={<Link to ="/consumer/pricing" />} icon={<AccountBalanceWalletIcon/>}>Pricing</MenuItem>
               <MenuItem component={<Link to ="/consumer/profile" />} icon={<PersonPinIcon/>}>Profile</MenuItem>
               <SubMenu label="More" icon={<MoreHorizIcon/>}>
+                <MenuItem onClick={() => navigate('/')} icon={<HomeIcon/>}>Go To</MenuItem>
                 <MenuItem onClick={handleLogout} icon={<LogoutIcon/>}>Logout</MenuItem>
               </SubMenu>
           </Menu>

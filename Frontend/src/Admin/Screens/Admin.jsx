@@ -20,7 +20,7 @@ function Admin() {
   },[])
 
   return (
-    <div style={{ display: 'flex' }}>
+    <div className="admin">
       <Sidenav />
       <Routes>
         <Route path="/" element={<Unverified />} />

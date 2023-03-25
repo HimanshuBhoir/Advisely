@@ -1,0 +1,101 @@
+.signin-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+  }
+  
+  .image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo-image {
+    width: 60vw;
+    height: 100vh;
+    image-rendering: pixelated;
+    object-fit: cover;
+  }
+  
+  .signin-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation-name: fade-in;
+    animation-duration: 2s;
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  h1 {
+    top: 0;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  input[type="email"], input[type="password"], input[type="text"] {
+    background-color: #f2f2f2;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    width: 100%;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+  }
+  
+  input[type="email"]:focus, input[type="password"]:focus, input[type="email"]:focus {
+    outline: none;
+    border: 1px solid rgb(5, 5, 38);
+  }
+  
+  input[type="email"]:hover, input[type="password"]:hover, input[type="password"]:hover {
+    background-color: #e6e6e6;
+  }
+  
+  button[type="submit"] {
+    background-color: rgb(5, 5, 38);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: rgb(5, 5, 38);
+  }
+
+  label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }

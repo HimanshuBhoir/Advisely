@@ -18,7 +18,7 @@ function Services() {
     cssEase: "linear"
     };
   return (
-    <div className='services'>
+    <div className='services' id='services'>
       <br />
       <h3>Expert advice just a click away - Consult with professionals online</h3>
       <br />
