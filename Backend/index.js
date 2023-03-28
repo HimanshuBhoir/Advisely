@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 const mongoose = require('mongoose')
 const app = express()
 const bodyParser = require('body-parser')
@@ -7,6 +8,10 @@ const ProfessionalUser = require('./Professional/Routes/Auth')
 const Profession = require('./Professional/Routes/Professions')
 const Consumer = require('./Consumer/Routes/Auth')
 const Bookings = require('./Consumer/Routes/Bookings')
+
+app.use(cors({
+    origin: "*"
+}))
 
 require('dotenv').config()
 app.use(bodyParser.json())

@@ -8,7 +8,7 @@ require('dotenv').config()
 
 // create routes
 
-router.get('/signin',async (req,res) => {
+router.post('/signin',async (req,res) => {
     try{
         const {adminuid, adminpass} = req.body
         User.findOne({adminuid:adminuid})

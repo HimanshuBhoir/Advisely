@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {useNavigate,Link} from 'react-router-dom'
+import axios from 'axios'
 import '../Styles/Asignin.css'
 
 function Signin() {
@@ -10,10 +11,26 @@ function Signin() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    localStorage.setItem('jwt','email')
-    console.log(`Email: ${email}, Password: ${password}`);
-    navigate('/admin')
-  }
+    axios({
+      method: 'post',
+      url: 'http://localhost:3000/admin/signin',
+      data: {
+        adminuid: email,
+        adminpass: password
+      },
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(res => {
+      localStorage.setItem('jwt', res.data.token);
+      console.log(res.data);
+      navigate('/admin');
+    })
+    .catch(error => {
+      console.log(error);
+    });
+  };
 
   return (
     <div className="signin-container">
@@ -26,7 +43,7 @@ function Signin() {
         <br />
         <label>
           Email:
-          <input type="email" value={email} onChange={(event) => setEmail(event.target.value)} />
+          <input type="text" value={email} onChange={(event) => setEmail(event.target.value)} />
         </label>
         <label>
           Password:
