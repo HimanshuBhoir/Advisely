@@ -17,7 +17,7 @@ function Sidenav() {
   const { collapseSidebar } = useProSidebar();
 
   const handleLogout = () => {
-    localStorage.setItem('jwt','')
+    localStorage.setItem('conjwt','')
     navigate('/consumersignin')
   }
 

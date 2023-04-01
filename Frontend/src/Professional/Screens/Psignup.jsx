@@ -1,18 +1,38 @@
 import React, {useState} from 'react'
 import {useNavigate , Link} from 'react-router-dom'
+import axios from 'axios'
 // import '../Styles/Psignin.css'
 
 function Psignup() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
+  const [no, setNo] = useState();
   const navigate = useNavigate()
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    localStorage.setItem('jwt','email')
-    console.log(`Email: ${email}, Password: ${password}`);
-    navigate('/professionalsignin')
+    axios({
+      method: 'post',
+      url: 'http://localhost:3000/professional/signup',
+      data: {
+        name,
+        email,
+        no,
+        password
+      },
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(res => {
+      console.log(res.data);
+      navigate('/professional/signin');
+    })
+    .catch(error => {
+      console.log(error);
+    });
   }
 
   return (
@@ -25,8 +45,16 @@ function Psignup() {
         <br />
         <br />
         <label>
+          Name:
+          <input type="text" value={name} onChange={(event) => setName(event.target.value)} />
+        </label>
+        <label>
           Email:
-          <input type="text" value={email} onChange={(event) => setEmail(event.target.value)} />
+          <input type="email" value={email} onChange={(event) => setEmail(event.target.value)} />
+        </label>
+        <label>
+          Mobile:
+          <input type="text" value={no} onChange={(event) => setNo(event.target.value)} />
         </label>
         <label>
           Password:

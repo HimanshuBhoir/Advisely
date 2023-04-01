@@ -1,10 +1,13 @@
-import React from 'react'
-import Sidenav from './Sidenav'
+import React, { useContext } from 'react'
+import { UserContext } from '../../App'
 
 function Profile() {
+
+  const {state} = useContext(UserContext)
+
   return (
     <div style={{display:'flex'}}>
-      Profile
+      {state && state.admin._id}
     </div>
   )
 }

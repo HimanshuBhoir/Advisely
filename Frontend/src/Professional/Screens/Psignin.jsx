@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {useNavigate, Link} from 'react-router-dom'
+import axios from 'axios'
 // import '../Styles/Psignin.css'
 
 function Psignin() {
@@ -10,9 +11,25 @@ function Psignin() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    localStorage.setItem('jwt','email')
-    console.log(`Email: ${email}, Password: ${password}`);
-    navigate('/professional')
+    axios({
+      method: 'post',
+      url: 'http://localhost:3000/professional/signin',
+      data: {
+        email,
+        password
+      },
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(res => {
+      localStorage.setItem('profjwt', res.data.token);
+      console.log(res.data);
+      navigate('/professional');
+    })
+    .catch(error => {
+      console.log(error);
+    });
   }
 
   return (

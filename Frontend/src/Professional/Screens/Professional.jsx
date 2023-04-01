@@ -14,7 +14,7 @@ function Admin() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    const user = localStorage.getItem('jwt')
+    const user = localStorage.getItem('profjwt')
     if(!user){
       navigate('/professionalsignin')
     }

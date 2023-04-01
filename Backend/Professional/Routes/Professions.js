@@ -23,7 +23,7 @@ router.post('/addprof',ProfessionalRequire, async (req,res) => {
     }
 })
 
-router.delete('/removeprof',ProfessionalRequire, async (req,res) => {
+router.delete('/removeprof', async (req,res) => {
     try {
         const profession = await Profession.deleteOne(req.body)
         res.json(profession)

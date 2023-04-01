@@ -17,7 +17,8 @@ router.post('/signin',async (req,res) => {
             bcrypt.compare(adminpass,savedUser.adminpass)
             .then(match => {
                 const token = jwt.sign({_id:savedUser._id},process.env.JWT)
-                if(match)   res.json({token})
+                const { _id, adminuid } = savedUser;
+                if(match)   res.json({token,admin:{ _id, adminuid }})
                 else    return res.status(422).json({error:"Wrong Password"})
             })
         })

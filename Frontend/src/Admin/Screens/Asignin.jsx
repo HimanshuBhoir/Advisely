@@ -1,10 +1,12 @@
-import React, {useState} from 'react'
+import React, {useState,useContext} from 'react'
 import {useNavigate,Link} from 'react-router-dom'
 import axios from 'axios'
+import { UserContext } from '../../App'
 import '../Styles/Asignin.css'
 
 function Signin() {
 
+  const {state,dispatch} = useContext(UserContext)
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate()
@@ -23,8 +25,9 @@ function Signin() {
       }
     })
     .then(res => {
-      localStorage.setItem('jwt', res.data.token);
+      localStorage.setItem('admjwt', res.data.token);
       console.log(res.data);
+      dispatch({type:'set_user',payload:res.data})
       navigate('/admin');
     })
     .catch(error => {

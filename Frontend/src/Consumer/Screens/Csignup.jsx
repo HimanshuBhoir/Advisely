@@ -1,18 +1,36 @@
 import React, {useState} from 'react'
 import {useNavigate , Link} from 'react-router-dom'
+import axios from 'axios'
 // import '../Styles/Psignin.css'
 
 function Csignup() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
   const navigate = useNavigate()
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    localStorage.setItem('jwt','email')
-    console.log(`Email: ${email}, Password: ${password}`);
-    navigate('/consumersignin')
+    axios({
+      method: 'post',
+      url: 'http://localhost:3000/consumer/signup',
+      data: {
+        name,
+        email,
+        password
+      },
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(res => {
+      console.log(res.data);
+      navigate('/consumer/signin');
+    })
+    .catch(error => {
+      console.log(error);
+    });
   }
 
   return (
@@ -24,6 +42,10 @@ function Csignup() {
         <h1>Consumer</h1>
         <br />
         <br />
+        <label>
+          Name:
+          <input type="text" value={name} onChange={(event) => setName(event.target.value)} />
+        </label>
         <label>
           Email:
           <input type="text" value={email} onChange={(event) => setEmail(event.target.value)} />

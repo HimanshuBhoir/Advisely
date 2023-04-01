@@ -47,7 +47,22 @@ router.get('/consumerbooking',ConsumerRequire, async (req,res) => {
     }
 })
 
-// Add mybookings, can be done agter jwt by header
-
+router.get('/appointment',ProfessionalRequire, async (req,res) => {
+    try{
+        const bookings = await Booking.find({'professionId.postedById': req.professional._id})
+        .populate({
+            path: 'professionId',
+            select: '_id professionname postedById',
+            populate: {
+              path: 'postedById',
+              select: '_id name email'
+            },
+          })
+        .populate('consumerId','_id name email')
+        res.json(bookings)
+    }catch(error){
+        res.json(error)
+    }
+})
 
 module.exports = router;

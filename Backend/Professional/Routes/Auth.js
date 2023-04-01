@@ -8,7 +8,7 @@ require('dotenv').config()
 
 // create routes
 
-router.get('/signin',async (req,res) => {
+router.post('/signin',async (req,res) => {
     try{
         const {email, password} = req.body
         User.findOne({email:email})
@@ -17,7 +17,8 @@ router.get('/signin',async (req,res) => {
             bcrypt.compare(password,savedUser.password)
             .then(match => {
                 const token = jwt.sign({_id:savedUser._id},process.env.JWT)
-                if(match)   res.json({token})
+                const {_id,name,no,email}= savedUser
+                if(match)   res.json({token,prof:{_id,name,no,name,email}})
                 else    return res.status(422).json({error:"Invalid Password"})
             })
         })
@@ -29,11 +30,13 @@ router.get('/signin',async (req,res) => {
 
 router.post('/signup',async (req,res) => {
     try {
-        const {email, password} = req.body
+        const {name, email, no, password} = req.body
         bcrypt.hash(password,7)
         .then(hashedpassword => {
             const user = new User({
+                name,
                 email,
+                no,
                 password:hashedpassword
             })
             user.save()

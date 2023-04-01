@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {useNavigate , Link} from 'react-router-dom'
+import axios from 'axios'
 // import '../Styles/Psignin.css'
 
 function Signin() {
@@ -10,9 +11,25 @@ function Signin() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    localStorage.setItem('jwt','email')
-    console.log(`Email: ${email}, Password: ${password}`);
-    navigate('/consumer')
+    axios({
+      method: 'post',
+      url: 'http://localhost:3000/consumer/signin',
+      data: {
+        email,
+        password
+      },
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(res => {
+      localStorage.setItem('conjwt', res.data.token);
+      console.log(res.data);
+      navigate('/consumer');
+    })
+    .catch(error => {
+      console.log(error);
+    });
   }
 
   return (
