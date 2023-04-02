@@ -62,7 +62,13 @@ function Bookings() {
                 <h5>Time : 08.45 26/03/2023</h5>
                 <br />
                 <br />
-                <button className='rejbtn' onClick={()=>handleUnbook(item._id)}>Cancel</button>
+                {
+                  item.confirmed ?
+                    <button className='btn'>Start</button>
+                  :
+                    <button className='rejbtn' onClick={()=>handleUnbook(item._id)}>Cancel</button>
+                }
+                
               </div>
 
             </div>

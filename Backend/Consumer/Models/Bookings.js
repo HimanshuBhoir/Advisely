@@ -11,10 +11,19 @@ const Book = mongoose.Schema({
         type: ObjectId,
         ref: "Consumer",
     },
+    confirmed:{
+        type:Boolean,
+        default: false
+    },
     appointmenttime:{
         type: Date,
         require: true,
+    },
+    postedById: {
+        type: ObjectId,
+        ref: "User",
+        required: true
     }
 });
 
-module.exports = mongoose.model("Booking",Book)
+module.exports = mongoose.model("Booking",Book);

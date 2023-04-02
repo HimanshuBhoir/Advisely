@@ -22,12 +22,13 @@ function Services() {
     });
   },[])
 
-  const handleBook = (_id) => {
+  const handleBook = (_id,postedById) => {
     axios({
       method: 'post',
       url: 'http://localhost:3000/booking/book',
       data: {
-        professionId:_id
+        professionId:_id,
+        postedById
       },
       headers: {
         'Content-Type': 'application/json',
@@ -63,7 +64,7 @@ function Services() {
                 <br />
                 <h4>This is the description. This is the description This is the description This is the description.</h4>
                 <br />
-                <button className='btn' onClick={() => handleBook(item._id)}>Book</button>
+                <button className='btn' onClick={() => handleBook(item._id,item.postedById._id)}>Book</button>
               </div>
       
             </div>
