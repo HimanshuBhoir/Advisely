@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Confirmed() {
 
+  const navigate = useNavigate()
   const [data,setData] = useState([])
 
   useEffect(() => {
@@ -22,6 +24,10 @@ function Confirmed() {
       console.log(error);
     });
   },[])
+
+  const handleStart = (meetId) => {
+    navigate(`/meet/${meetId}`)
+  }
 
   return (
     <div className='card verified'>
@@ -46,7 +52,7 @@ function Confirmed() {
                 <br />
               </div>
               <div style={{display:'flex',alignItems:'center',justifyContent:'right', width:'100%'}}>
-              <button className='btn' style={{margin:'20px'}}>Start</button>
+              <button className='btn' style={{margin:'20px'}} onClick={() => handleStart(item._id)}>Start</button>
               </div>
 
             </div>

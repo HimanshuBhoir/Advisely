@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Bookings() {
 
+  const navigate = useNavigate()
   const [data,setData] = useState([])
 
   useEffect(() => {
@@ -43,6 +45,10 @@ function Bookings() {
     })
   }
 
+  const handleStart = (meetId) => {
+    navigate(`/meet/${meetId}`)
+  }
+
   return (
     <div className='card appt'>
 
@@ -64,7 +70,7 @@ function Bookings() {
                 <br />
                 {
                   item.confirmed ?
-                    <button className='btn'>Start</button>
+                    <button className='btn' onClick={() => handleStart(item._id)}>Start</button>
                   :
                     <button className='rejbtn' onClick={()=>handleUnbook(item._id)}>Cancel</button>
                 }
