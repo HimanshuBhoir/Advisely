@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 function Services() {
 
+  const navigate = useNavigate()
   const [data,setData] = useState([])
 
   useEffect(() => {
@@ -22,25 +24,8 @@ function Services() {
     });
   },[])
 
-  const handleBook = (_id,postedById) => {
-    axios({
-      method: 'post',
-      url: 'http://localhost:3000/booking/book',
-      data: {
-        professionId:_id,
-        postedById
-      },
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `${localStorage.getItem("conjwt")}`,
-      }
-    })
-    .then(res => {
-      console.log(res.data)
-    })
-    .catch(error => {
-      console.log(error);
-    });
+  const handleBook = (_id) => {
+    navigate(`/consumer/service/${_id}`)
   }
 
   return (
@@ -64,7 +49,7 @@ function Services() {
                 <br />
                 <h4>This is the description. This is the description This is the description This is the description.</h4>
                 <br />
-                <button className='btn' onClick={() => handleBook(item._id,item.postedById._id)}>Book</button>
+                <button className='btn' onClick={() => handleBook(item._id)}>Check On</button>
               </div>
       
             </div>

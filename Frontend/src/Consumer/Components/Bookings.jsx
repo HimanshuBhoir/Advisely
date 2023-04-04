@@ -45,7 +45,7 @@ function Bookings() {
     })
   }
 
-  const handleStart = (meetId) => {
+  const handleStart = (id) => {
     navigate(`/meet/${meetId}`)
   }
 
@@ -70,7 +70,7 @@ function Bookings() {
                 <br />
                 {
                   item.confirmed ?
-                    <button className='btn' onClick={() => handleStart(item._id)}>Start</button>
+                    <button className='btn' onClick={() => handleStart(item.professionId._id)}>Start</button>
                   :
                     <button className='rejbtn' onClick={()=>handleUnbook(item._id)}>Cancel</button>
                 }

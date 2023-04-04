@@ -28,7 +28,7 @@ function Admin() {
           <Route path="/bookings" element={<Bookings />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/service" element={<Single />} />
+          <Route path="/service/:id" element={<Single />} />
           <Route path="*" element={<h1>Page Not Found</h1>} />
         </Routes>
     </div>
