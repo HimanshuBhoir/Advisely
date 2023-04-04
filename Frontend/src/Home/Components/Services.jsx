@@ -1,12 +1,30 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import '../styles/Services.css';
 import Slider from 'react-slick'
 
 function Services() {
 
   const navigate = useNavigate()
-  const arr = ["one","two","three","four","five","six"]
+  const [data,setData] = useState(["name","name","name","name","name"])
+
+  useEffect(() => {
+    axios({
+      method: 'get',
+      url: 'http://localhost:3000/profession/verified',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(res => {
+      console.log(res.data)
+      setData(res.data)
+    })
+    .catch(error => {
+      console.log(error);
+    });
+  },[])
 
   const settings = {
     infinite: true,
@@ -24,12 +42,13 @@ function Services() {
       <br />
       <Slider {...settings}>
         {
-          arr.map((item) => {
+          data.map((item) => {
             return (
               <button className='card srvc' onClick={() => navigate('/consumer/service')}>
                 <img className="sim" src="" alt='none'/>
-                <h1>{item}</h1>
-                <p>{item}{item}{item}Thisi sis me HIanshidn d and d I cann do anything I want Thisi I cann do anything I want Thisi</p>
+                <h1>{item.professionname}</h1>
+                <h5>{item.postedById.email}</h5>
+                <p>Thisi sis me HIanshidn d and d I cann do anything I want Thisi I cann do anything I want Thisi</p>
               </button>
             );
           })
