@@ -52,7 +52,7 @@ function Confirmed() {
                 <br />
               </div>
               <div style={{display:'flex',alignItems:'center',justifyContent:'right', width:'100%'}}>
-              <button className='btn' style={{margin:'20px'}} onClick={() => handleStart(item._id)}>Start</button>
+              <button className='btn' style={{margin:'20px'}} onClick={() => handleStart(item.professionId._id)}>Start</button>
               </div>
 
             </div>

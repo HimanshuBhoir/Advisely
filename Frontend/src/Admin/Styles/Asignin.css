@@ -55,7 +55,7 @@
     margin-bottom: 10px;
   }
   
-  input[type="email"], input[type="password"], input[type="text"] {
+  input[type="email"], input[type="password"], input[type="text"], input[type="file"], textarea {
     background-color: #f2f2f2;
     border: none;
     padding: 10px;
@@ -67,12 +67,12 @@
     font-weight: 300;
   }
   
-  input[type="email"]:focus, input[type="password"]:focus, input[type="email"]:focus {
+  input[type="email"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="file"]:focus, textarea:focus {
     outline: none;
     border: 1px solid rgb(5, 5, 38);
   }
   
-  input[type="email"]:hover, input[type="password"]:hover, input[type="password"]:hover {
+  input[type="email"]:hover, input[type="password"]:hover, input[type="password"]:hover, input[type="file"]:hover, textarea:hover {
     background-color: #e6e6e6;
   }
   

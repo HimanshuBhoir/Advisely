@@ -45,7 +45,7 @@ function Bookings() {
     })
   }
 
-  const handleStart = (id) => {
+  const handleStart = (meetId) => {
     navigate(`/meet/${meetId}`)
   }
 

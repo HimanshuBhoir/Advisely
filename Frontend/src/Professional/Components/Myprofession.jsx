@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import {useNavigate} from 'react-router-dom'
 import AddCircleOutlineSharpIcon from '@mui/icons-material/AddCircleOutlineSharp';
 import axios from 'axios'
+
 function Myprofession() {
 
+  const navigate = useNavigate()
   const [data, setData] = useState([])
 
   useEffect(() => {
@@ -23,13 +26,17 @@ function Myprofession() {
     });
   },[])
 
+  const handleAdd = () => {
+    navigate('/professional/addprof')
+  }
+
   return (
       <div className='card verified'>
 
       <h2>MyProfessions</h2>
       <br />
 
-      <button className='card ver' style={{ justifyContent:'center', alignItems:'center', height:'20%', fontSize:'20px'}}>
+      <button onClick={handleAdd} className='card ver' style={{ justifyContent:'center', alignItems:'center', height:'20%', fontSize:'20px'}}>
         <AddCircleOutlineSharpIcon style={{fontSize:'50px', padding:'10px', opacity:'0.6'}}/>
         Add Profession
       </button>

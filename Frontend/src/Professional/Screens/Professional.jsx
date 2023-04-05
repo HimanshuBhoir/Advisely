@@ -8,6 +8,7 @@ import Appointments from '../Components/Appointments';
 import Myprofession from '../Components/Myprofession';
 import Profile from '../Components/Profile';
 import Earning from '../Components/Earning';
+import Addprof from '../Components/Addprof';
 
 function Admin() {
 
@@ -28,6 +29,7 @@ function Admin() {
           <Route path="/appointments" element={<Appointments />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/earning" element={<Earning />} />
+          <Route path="/addprof" element={<Addprof />} />
           <Route path="*" element={<h1>Page Not Found</h1>} />
         </Routes>
     </div>
