@@ -5,8 +5,8 @@ import {ZegoUIKitPrebuilt} from '@zegocloud/zego-uikit-prebuilt'
 function Meet() {
     const {meetId} = useParams()
     const myMeet = async(element) => {
-        const appID = 1832768329;
-        const serverSecret = "d5dd18b8654ceec66119e8866aa75e20";
+        const appID = 873364805;
+        const serverSecret = "c9c3da2de09ef1e4786cf9db435f41a6";
         const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(
             appID,
             serverSecret, 
