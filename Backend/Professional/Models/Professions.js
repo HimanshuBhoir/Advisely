@@ -10,12 +10,20 @@ const Professions = mongoose.Schema({
         type: String,
         require: true,
     },
+    image:{
+        type: String,
+        require: true,
+    },
     verified:{
         type: Boolean,
         default: false,
     },
     rating:{
         type: Number,
+    },
+    note:{
+        type: String,
+        require: true,
     },
     description:{
         type: String,

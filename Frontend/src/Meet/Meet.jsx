@@ -12,15 +12,16 @@ function Meet() {
             serverSecret, 
             meetId,
             Date.now().toString(),
-            "Himbr"
+            "User"
             )
         const zc = ZegoUIKitPrebuilt.create(kitToken)
+
         zc.joinRoom({
-            container: element,
-            scenario:{
-                mode: ZegoUIKitPrebuilt.OneONoneCall,
-            },
-        })
+            // scenario:{
+            //     mode: ZegoUIKitPrebuilt.OneONoneCall,
+            // },
+            showPreJoinView: false
+        });
     }
   return (
     <div>

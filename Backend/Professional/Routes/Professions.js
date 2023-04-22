@@ -7,13 +7,15 @@ const ProfessionalRequire = require('../Middleware/ProffesionalRequire')
 
 router.post('/addprof',ProfessionalRequire, async (req,res) => {
     try {
-        const {professionname, document, verified, rating, description} = req.body
+        const {professionname, document, image,verified, rating, description, note} = req.body
         const profession = new Profession({
             professionname,
             document,
+            image,
             verified,
             rating,
             description,
+            note,
             postedById:req.professional
         })
         await profession.save()
