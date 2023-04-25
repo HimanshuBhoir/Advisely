@@ -45,7 +45,7 @@ function Services() {
       
               <div className='card desc'>
                 <h2>{item.professionname}</h2>
-                <h6>{item.postedById.email}</h6>
+                <h6>{item.postedById.name}</h6>
                 <br />
                 <h4>This is the description. This is the description This is the description This is the description.</h4>
                 <br />

@@ -46,9 +46,10 @@ function Services() {
             return (
               <button className='card srvc' onClick={() => navigate(`/consumer/service/${item._id}`)}>
                 <img className="sim" src={item.document} alt='none'/>
-                <h1>{item.professionname}</h1>
-                {/* <h5>{item.postedById.email}</h5> */}
-                <p>Thisi sis me HIanshidn d and d I cann do anything I want Thisi I cann do anything I want Thisi</p>
+                <br />
+                <h2>{item.professionname}</h2>
+                {/* <h5>{item.postedById.name}</h5> */}
+                <p>{item.note}</p>
               </button>
             );
           })

@@ -70,18 +70,20 @@ function Appointments() {
       {
         data.map(item => {
           return(
-            <div className='card apt'>
+            <div className='card apt' style={{width:'100%'}}>
         
-              <div className='card aaimg'>
+              <div className='card aaimg' style={{width:'30%'}}>
                 <img className='aimg' src="https://media.istockphoto.com/id/1331029732/photo/close-up-of-a-male-doctor-hand-hold-a-silver-pen-and-showing-pad-in-hospital-doctor-giving.jpg?b=1&s=170667a&w=0&k=20&c=86i9uwpHBolC0pjotbCFSrOJbV_EYFN8atFRAH2DMuM=" alt="service Image" />
               </div>
 
               <div className='card bd'>
-                <h2>{item.professionId.professionname}</h2>
-                <h6>{item.postedById}</h6>
+                <h3>{item.professionId.professionname}</h3>
                 <br />
-                <h5>Booked By : {item.consumerId._id}</h5>
-                <h5>Time : 08.45 26/03/2023</h5>
+                <h5>Booked By : {item.consumerId.name}</h5>
+                <h5>Date : {item.appointmenttime.substring(0,10)}</h5>
+                <h5>Time : {item.appointmenttime.substring(11,19)}</h5>
+                <br />
+                <h5>Reson : {item.request}</h5>
                 <br />
                 <button className='btn' style={{margin:'5px'}} onClick={() => handleAccept(item._id)}>Accept</button>
                 <button className='rejbtn' onClick={() => handleUnbook(item._id)}>Reject</button>

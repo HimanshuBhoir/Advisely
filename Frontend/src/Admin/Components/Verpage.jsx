@@ -86,7 +86,7 @@ function Verpage() {
                   </div>
                 </div>
 
-                <div style={{textAlign:'left', padding:'15px'}}>
+                <div style={{textAlign:'justify', padding:'25px'}}>
                     <p>{data.image}</p>
                     <br />
                     <p>{data.description}</p>

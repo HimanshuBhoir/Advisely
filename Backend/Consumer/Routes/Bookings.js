@@ -36,7 +36,7 @@ router.get('/consumerbooking',ConsumerRequire, async (req,res) => {
         const bookings = await Booking.find({consumerId:req.consumer._id})
         .populate({
             path: 'professionId',
-            select: '_id professionname document appointmenttime postedById',
+            select: '_id professionname document postedById',
             populate: {
               path: 'postedById',
               select: '_id name email'
