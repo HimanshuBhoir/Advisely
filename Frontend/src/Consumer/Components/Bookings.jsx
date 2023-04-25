@@ -65,8 +65,8 @@ function Bookings() {
                 <h3>{item.professionId.professionname}</h3>
                 <h6>{item.professionId.postedById.name}</h6>
                 <br />
-                <h5>Date : {item.appointmenttime.substring(0,10)}</h5>
-                <h5>Time : {item.appointmenttime.substring(11,19)}</h5>
+                <h5>Date : {item.appointmenttime && item.appointmenttime.substring(0,10)}</h5>
+                <h5>Time : {item.appointmenttime && item.appointmenttime.substring(11,19)}</h5>
                 <br />
                 <br />
                 {

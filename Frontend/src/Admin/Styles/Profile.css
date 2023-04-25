@@ -1,0 +1,38 @@
+
+.profile{
+    width: 100vw;
+    height: 100vh;
+}
+
+.up{
+    height: 25%;
+    border-bottom: 1px ;
+}
+
+.down{
+    justify-content: center;
+    height: 75%;
+    /* width: 100%; */
+    display: flex;
+    padding: 20px;
+}
+
+.logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 8rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+  }
+
+.bt{
+    margin: 20px;
+    width: 25%;
+    height: 50%;
+    background-color: white;
+}
+  
+.cnt{
+    font-size: 7rem;
+    font-weight: 100;
+}

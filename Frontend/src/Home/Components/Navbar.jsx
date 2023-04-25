@@ -10,7 +10,7 @@ function Navbar() {
 
   return (
     <nav className='card navbar' >
-      <h1 className='logo'>Advisely</h1>
+      <h1 style={{fontSize:'2rem', color:'white', padding:'5px 10px'}}>Advisely</h1>
       <ul className='nav' type='none'>
         <li><Link to = "#header" className='link'>Home</Link></li>
         <li><Link to = "#logs" className='link'>Logs</Link></li>

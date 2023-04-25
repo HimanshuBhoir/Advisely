@@ -52,7 +52,7 @@ router.get('/consumerbooking',ConsumerRequire, async (req,res) => {
 router.get('/appointment', ProfessionalRequire , async (req, res) => {
     try {
         const bookings = await Booking.find({ postedById: req.professional._id, confirmed: false })
-            .populate('professionId', 'professionname')
+            .populate('professionId', 'professionname document')
             .populate('consumerId', 'name')
             // .populate('postedById', 'name')
         res.json(bookings);
@@ -64,7 +64,7 @@ router.get('/appointment', ProfessionalRequire , async (req, res) => {
 router.get('/confirmed', ProfessionalRequire , async (req, res) => {
     try {
         const bookings = await Booking.find({ postedById: req.professional._id, confirmed: true})
-            .populate('professionId', 'professionname')
+            .populate('professionId', 'professionname document')
             .populate('consumerId', 'name')
         res.json(bookings);
     } catch (error) {
@@ -80,5 +80,15 @@ router.put('/accept', ProfessionalRequire , async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
+
+router.get('/count',async (req,res) => {
+    try{
+        const count = await Booking.countDocuments()
+        res.json(count)
+    }catch(error){
+        res.json(error)
+    }
+})
+
 
 module.exports = router;

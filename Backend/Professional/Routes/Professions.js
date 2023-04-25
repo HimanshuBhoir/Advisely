@@ -43,6 +43,24 @@ router.get('/myprofessions',ProfessionalRequire, async (req,res) => {
     }
 })
 
+router.get('/vcount',async (req,res) => {
+    try{
+        const count = await Profession.countDocuments({verified:true})
+        res.json(count)
+    }catch(error){
+        res.json(error)
+    }
+})
+
+router.get('/ucount',async (req,res) => {
+    try{
+        const count = await Profession.countDocuments({verified:false})
+        res.json(count)
+    }catch(error){
+        res.json(error)
+    }
+})
+
 router.get('/verified',async (req,res) => {
     try{
         const profession = await Profession.find({verified:true}).populate('postedById','_id name email')
