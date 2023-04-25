@@ -15,6 +15,10 @@ const Book = mongoose.Schema({
         type:Boolean,
         default: false
     },
+    request:{
+        type: String,
+        require: true,
+    },
     appointmenttime:{
         type: Date,
         require: true,

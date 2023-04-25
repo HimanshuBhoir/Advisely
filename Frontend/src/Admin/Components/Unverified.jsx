@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 function Unverified() {
 
+  const navigate = useNavigate()
   const [data,setData] = useState([])
 
   useEffect(() => {
@@ -23,23 +25,10 @@ function Unverified() {
   },[])
 
   const handleVerify = (_id) => {
-    axios({
-      method: 'put',
-      url: 'http://localhost:3000/profession/verify',
-      data: {
-        _id
-      },
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(res => {
-      console.log(res.data)
-    })
-    .catch(error => {
-      console.log(error);
-    });
+    navigate(`/admin/ver/${_id}`)
   }
+
+
 
   return (
     <div className='card verified'>
@@ -63,7 +52,7 @@ function Unverified() {
                 <br />
                 <h4>{item.note}</h4>
                 <br />
-                <button className='btn' onClick={()=>handleVerify(item._id)}>Verify</button>
+                <button className='btn' onClick={()=>handleVerify(item._id)}>Check on Request</button>
               </div>
 
             </div>

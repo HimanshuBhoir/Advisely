@@ -1,6 +1,7 @@
 .single{
     width: 100vw;
     height: 100vh;
+    justify-content: center;
 }
 
 .srv{
@@ -17,6 +18,37 @@
     padding: 3%;
 }
 
+.bottom{
+    text-align: right;
+    width: 100%;
+}
+
 .dsc{
     width: 40%;
+    text-align: left;
 }
+
+input[type="datetime-local"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    background-image: linear-gradient(to bottom, #fff 0%, #f2f2f2 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #000;
+    font-size: 16px;
+  }
+
+  
+  .middle{
+    padding: 10px;
+    display: flex;
+  }
+
+  .d{
+    width: 100%;
+    text-align: justify;
+    padding: 10px;
+  }

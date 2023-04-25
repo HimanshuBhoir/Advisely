@@ -45,7 +45,7 @@ function Services() {
           data.map((item) => {
             return (
               <button className='card srvc' onClick={() => navigate(`/consumer/service/${item._id}`)}>
-                <img className="sim" src="" alt='none'/>
+                <img className="sim" src={item.document} alt='none'/>
                 <h1>{item.professionname}</h1>
                 {/* <h5>{item.postedById.email}</h5> */}
                 <p>Thisi sis me HIanshidn d and d I cann do anything I want Thisi I cann do anything I want Thisi</p>

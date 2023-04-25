@@ -9,6 +9,8 @@ function Single() {
 
   const {id} = useParams()
   const [data,setData] = useState(null)
+  const [appointmenttime, setAppointmenttime] = useState()
+  const [request,setRequest] = useState("")
 
   useEffect(() => {
     axios({
@@ -33,6 +35,8 @@ function Single() {
       url: 'http://localhost:3000/booking/book',
       data: {
         professionId,
+        appointmenttime,
+        request,
         postedById
       },
       headers: {
@@ -46,6 +50,7 @@ function Single() {
     .catch(error => {
       console.log(error);
     });
+    setRequest("")
   }
 
   return (
@@ -57,23 +62,36 @@ function Single() {
             <div className='srv'>
             
               <div className='top'>
-                <img className='card im' src="https://media.istockphoto.com/id/1331029732/photo/close-up-of-a-male-doctor-hand-hold-a-silver-pen-and-showing-pad-in-hospital-doctor-giving.jpg?b=1&s=170667a&w=0&k=20&c=86i9uwpHBolC0pjotbCFSrOJbV_EYFN8atFRAH2DMuM=" alt="none" />
+                <img className='card simg' src={data.document} alt="none" />
     
-                <div className='dsc'>
-                  <h2>{data.professionname}</h2>
-                  <h5>{data.postedById}</h5>
-                  <br />
-
-                  <button className='btn' onClick={()=>handleBook(data._id,data.postedById)}>Book Appointment</button>
-                  <br />
-
-                  <br />
-                  <p>Heyy this is the description and am here to present my description. Heyy this is the description and am here to present my description. Heyy this is the description and am here to present my description.</p>
-                </div>
+                
               </div>
-    
-              <div className='bottom'>
-    
+
+
+              <div className='middle'>
+                <div className='d'>
+                    <h2>{data.note}</h2>
+                    <br />                    
+                    <p>{data.description}</p>
+                </div>
+
+                <div className='d'>
+                    <h2>{data.professionname}</h2>
+                    <h5>{data.postedById}</h5>
+                    <br />
+                    <input type="datetime-local" value={appointmenttime} onChange={(e) => setAppointmenttime(e.target.value)} />
+                    <br />
+                    <br />
+                    <h5>Explain in short, why you want the service?</h5>
+                    <textarea style={{width:"90%"}} value={request} onChange={(e) => setRequest(e.target.value)}/>
+                
+                    <div className='bottom'>
+                    <button className='btn' onClick={()=>handleBook(data._id,data.postedById)}>Book Appointment</button>
+              </div>
+
+                </div>
+
+
               </div>
     
             </div>

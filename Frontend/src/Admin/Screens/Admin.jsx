@@ -7,6 +7,7 @@ import Unverified from '../Components/Unverified';
 import Verified from '../Components/Verified';
 import Profile from '../Components/Profile';
 import '../Styles/Admin.css'
+import Verpage from '../Components/Verpage';
 
 function Admin() {
 
@@ -26,6 +27,7 @@ function Admin() {
         <Route path="/" element={<Unverified />} />
         <Route path="/verified" element={<Verified />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/ver/:id" element={<Verpage />} />
         <Route path="*" element={<h1>Page Not Found</h1>} />
       </Routes>
     </div>

@@ -79,4 +79,13 @@ router.get('/:id',async (req,res) => {
     }
 })
 
+router.get('/ver/:id',async (req,res) => {
+    try{
+        const profession = await Profession.findById(req.params.id)
+        res.json(profession)
+    }catch(error){
+        res.json(error)
+    }
+})
+
 module.exports = router;

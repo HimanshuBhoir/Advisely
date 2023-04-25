@@ -1,17 +1,16 @@
 .appt{
     width: 100vw;
     height: 100vh;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: left;
     /* padding: 30px; */
     display: flex;
     flex-wrap: wrap;
 }
 
 .apt{
-    margin-left: 15px;
-    margin-bottom: 0;
-    width: 30%;
+    margin: 15px;
+    width: 45%;
     height: 35%;
     background-color: whitesmoke;
     display: flex;
@@ -41,5 +40,5 @@
 
 .bd{
     padding: 10px;
-    text-align: center;
+    text-align: justify;
 }

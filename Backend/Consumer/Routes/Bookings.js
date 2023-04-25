@@ -7,11 +7,12 @@ const ProfessionalRequire = require('../../Professional/Middleware/ProffesionalR
 
 router.post('/book', ConsumerRequire, async (req,res) => {
     try {
-        const {professionId, consumerId, postedById, appointmenttime} = req.body
+        const {professionId, consumerId, postedById, appointmenttime, request} = req.body
         const booking = new Booking({
             professionId,
             consumerId: req.consumer._id,
             appointmenttime,
+            request,
             postedById
         })
         await booking.save()
@@ -35,7 +36,7 @@ router.get('/consumerbooking',ConsumerRequire, async (req,res) => {
         const bookings = await Booking.find({consumerId:req.consumer._id})
         .populate({
             path: 'professionId',
-            select: '_id professionname postedById',
+            select: '_id professionname document appointmenttime postedById',
             populate: {
               path: 'postedById',
               select: '_id name email'
