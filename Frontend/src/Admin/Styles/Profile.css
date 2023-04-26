@@ -27,6 +27,7 @@
 
 .bt{
     margin: 20px;
+    padding: 20px;
     width: 25%;
     height: 50%;
     background-color: white;
@@ -36,3 +37,16 @@
     font-size: 7rem;
     font-weight: 100;
 }
+
+.prof {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .pimg {
+    margin: 20px;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+  }

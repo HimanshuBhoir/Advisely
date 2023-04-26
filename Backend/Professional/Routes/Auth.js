@@ -3,6 +3,7 @@ const router = express.Router()
 const User = require('../Models/User')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
+const ProfessionalRequire = require('../Middleware/ProffesionalRequire')
 
 require('dotenv').config()
 
@@ -46,5 +47,15 @@ router.post('/signup',async (req,res) => {
         res.json(error)
     }
 })
+
+router.get('/personal', ProfessionalRequire, async(req,res) => {
+    try{
+        const professional = await User.findById(req.professional._id)
+        res.json(professional)
+    }catch(error){
+        res.json(error)
+    }
+})
+
 
 module.exports = router;

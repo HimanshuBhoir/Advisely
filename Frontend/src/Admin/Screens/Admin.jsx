@@ -22,14 +22,18 @@ function Admin() {
 
   return (
     <div className="admin">
-      <Sidenav />
-      <Routes>
+      <>
+      <Sidenav className="sidenav"/>
+      </>
+      <>
+      <Routes className="ad">
         <Route path="/" element={<Unverified />} />
         <Route path="/verified" element={<Verified />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/ver/:id" element={<Verpage />} />
         <Route path="*" element={<h1>Page Not Found</h1>} />
       </Routes>
+      </>
     </div>
   )
 }

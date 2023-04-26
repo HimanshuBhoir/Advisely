@@ -1,13 +1,22 @@
 .admin {
-    display: flex;
-    /* overflow: visible; */
-    position: relative;
-  }
-  
-  .side {
-    background-color: #080628 !important;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
+  display: flex;
+  position: relative;
+}
+
+.side {
+  background-color: #080628 !important;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+}
+
+.ad {
+  position: absolute;
+  left: 200px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+}

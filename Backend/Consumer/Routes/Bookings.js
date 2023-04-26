@@ -90,5 +90,32 @@ router.get('/count',async (req,res) => {
     }
 })
 
+router.get('/mycount',ConsumerRequire ,async (req,res) => {
+    try{
+        const count = await Booking.countDocuments({consumerId: req.consumer._id})
+        res.json(count)
+    }catch(error){
+        res.json(error)
+    }
+})
+
+router.get('/pcount',ProfessionalRequire ,async (req,res) => {
+    try{
+        const count = await Booking.countDocuments({postedById: req.professional._id, confirmed: false})
+        res.json(count)
+    }catch(error){
+        res.json(error)
+    }
+})
+
+router.get('/pccount',ProfessionalRequire ,async (req,res) => {
+    try{
+        const count = await Booking.countDocuments({postedById: req.professional._id, confirmed: true})
+        res.json(count)
+    }catch(error){
+        res.json(error)
+    }
+})
+
 
 module.exports = router;

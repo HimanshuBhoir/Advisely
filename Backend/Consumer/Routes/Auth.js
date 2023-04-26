@@ -3,6 +3,7 @@ const router = express.Router()
 const User = require('../Models/User')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
+const ConsumerRequire = require('../Middleware/ConsumerRequire')
 
 require('dotenv').config()
 
@@ -27,7 +28,6 @@ router.post('/signin',async (req,res) => {
     }
 })
 
-
 router.post('/signup',async (req,res) => {
     try {
         const {name, email, password} = req.body
@@ -45,5 +45,15 @@ router.post('/signup',async (req,res) => {
         res.json(error)
     }
 })
+
+router.get('/personal', ConsumerRequire, async(req,res) => {
+    try{
+        const consumer = await User.findById(req.consumer._id)
+        res.json(consumer)
+    }catch(error){
+        res.json(error)
+    }
+})
+
 
 module.exports = router;
