@@ -1,9 +1,10 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import {ZegoUIKitPrebuilt} from '@zegocloud/zego-uikit-prebuilt'
 
 function Meet() {
     const {meetId} = useParams()
+    const navigate = useNavigate()
     const myMeet = async(element) => {
         const appID = 873364805;
         const serverSecret = "c9c3da2de09ef1e4786cf9db435f41a6";
@@ -17,11 +18,10 @@ function Meet() {
         const zc = ZegoUIKitPrebuilt.create(kitToken)
 
         zc.joinRoom({
-            // scenario:{
-            //     mode: ZegoUIKitPrebuilt.OneONoneCall,
-            // },
             showPreJoinView: false
         });
+        
+        
     }
   return (
     <div>

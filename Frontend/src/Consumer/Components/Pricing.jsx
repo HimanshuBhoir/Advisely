@@ -1,8 +1,32 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 function Pricing() {
 
+  const navigate = useNavigate()
   const [token, setToken] = useState(1)
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    axios({
+      method: 'get',
+      url: 'https://advisely-mini.onrender.com/consumer/personal',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `${localStorage.getItem("conjwt")}`,
+      }
+    })
+    .then(res => {
+      console.log(res.data)
+      setData(res.data)
+    })
+    .catch(error => {
+      console.log(error);
+    });
+  })
+
+
   const handleToken = (e) => {
     var options = {
       key:"rzp_test_aeB8XArLYADkdJ",
@@ -33,9 +57,9 @@ function Pricing() {
   return (
     <div className='verified'>
       <div>
-        <h1>Available tokens: 1</h1>
+        <h1>Available tokens: {data?data.token:1}</h1>
         <br />
-        <button className='btn'>Use</button>
+        <button className='btn' onClick={ () => {navigate('/consumer')}}>Use</button>
     <br /><br /><br />
         <h3>Want to buy more?</h3>
         <br />

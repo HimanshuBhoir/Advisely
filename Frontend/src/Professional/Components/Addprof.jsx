@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import {useNavigate} from 'react-router-dom'
 import '../Styles/Addprof.css';
 
 function Addprof() {
+
+  const navigate = useNavigate()
   const [professionname, setProfessionname] = useState('');
   const [document, setDocument] = useState('');
   const [description, setDescription] = useState('');
@@ -24,7 +27,7 @@ function Addprof() {
       .then(res => res.json())
       .then(data=>{
         setDocument(data.url)
-        console.log(document)
+        // console.log(document)
       })
       .catch(err=>{
         console.log(err)
@@ -48,7 +51,9 @@ function Addprof() {
         }
         })
         .then(res => {
-            console.log(res.data)
+            // console.log(res.data)
+            alert("Your Profession Request is sent succesfully!")
+            navigate('/professional')
         })
         .catch(error => {
             console.log(error);

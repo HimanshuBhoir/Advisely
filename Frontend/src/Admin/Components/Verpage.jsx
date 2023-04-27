@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 
 function Verpage() {
   
+    const navigate = useNavigate()
     const {id} = useParams()
     const [data,setData] = useState([])
 
@@ -37,6 +38,8 @@ function Verpage() {
           })
           .then(res => {
             console.log(res.data)
+            confirm("I'm perfectly aggre with him, and want to give a chance to serve the globe!")
+            navigate('/admin')
           })
           .catch(error => {
             console.log(error);
@@ -56,6 +59,8 @@ function Verpage() {
           })
           .then(res => {
             console.log(res.data)
+            confirm("I'm not into these and want to reject these.")
+            navigate('/admin')
           })
           .catch(error => {
             console.log(error);

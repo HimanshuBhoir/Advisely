@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import '../Styles/Single.css'
 
@@ -7,6 +7,7 @@ import '../Styles/Single.css'
 
 function Single() {
 
+  const navigate = useNavigate()
   const {id} = useParams()
   const [data,setData] = useState(null)
   const [appointmenttime, setAppointmenttime] = useState()
@@ -45,7 +46,9 @@ function Single() {
       }
     })
     .then(res => {
-      console.log(res.data)
+      // console.log(res.data)
+      confirm("Booked appointment, stay connected for the confirmation status!")
+      navigate('/consumer/bookings')
     })
     .catch(error => {
       console.log(error);

@@ -17,7 +17,7 @@ function Bookings() {
       }
     })
     .then(res => {
-      console.log(res.data)
+      // console.log(res.data)
       setData(res.data)
     })
     .catch(error => {
@@ -38,7 +38,9 @@ function Bookings() {
       }
     })
     .then(res => {
-      console.log(res.data)
+      // console.log(res.data)
+      confirm('Really want to cancel appointment?')
+      window.location.reload()
     })
     .catch(error => {
       console.log(error);
@@ -53,6 +55,7 @@ function Bookings() {
     <div className='card appt'>
 
       {
+        data ?
         data.map(item => {
           return (
             <div className='card apt'>
@@ -81,6 +84,8 @@ function Bookings() {
             </div>
           )
         })
+        :
+        <h1>Loading</h1>
       }
 
     </div>

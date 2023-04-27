@@ -70,6 +70,12 @@ function Profile() {
           </text>
         <h2>Total Sessions</h2>
         </button>
+        <button className='bt'> 
+         <text className='cnt'>
+            {data.session ? data.session*60 : 0}
+          </text>
+        <h2>Time Spent (Min)</h2>
+        </button>
         </div>
           </>
         ) : (

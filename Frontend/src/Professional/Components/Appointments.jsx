@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
 import '../Styles/Appointments.css'
 
 function Appointments() {
 
+  const navigate = useNavigate()
   const [data,setData] = useState([])
 
   useEffect(() => {
@@ -37,7 +39,9 @@ function Appointments() {
       }
     })
     .then(res => {
-      console.log(res.data)
+      // console.log(res.data)
+      confirm("Reject the request?")
+      window.location.reload()
     })
     .catch(error => {
       console.log(error);
@@ -57,7 +61,9 @@ function Appointments() {
       }
     })
     .then(res => {
-      console.log(res.data)
+      // console.log(res.data)
+       alert("Accepted the appointment request.")
+       navigate('/professional/confirmed')
     })
     .catch(error => {
       console.log(error);
