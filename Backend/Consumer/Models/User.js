@@ -17,9 +17,9 @@ const User = mongoose.Schema({
         type: String,
         require: true,
     },
-    subscription:{
-        type: Boolean,
-        default: false,
+    token:{
+        type: Number,
+        default: 1,
     },
     session:{
         type: Number,

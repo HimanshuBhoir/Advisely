@@ -17,6 +17,7 @@ function Profile() {
       }
     })
     .then(res => {
+      console.log(res.data)
       setData(res.data)
     })
     .catch(error => {
@@ -50,12 +51,24 @@ function Profile() {
           <br />
           <h2>{data.name}</h2>
         </div>
-        <div className='bottom' style={{ display:'flex', justifyContent:'left', alignItems:'left'}}>
+        <div className='bottom' style={{ display:'flex', justifyContent:'center', alignItems:'center'}}>
+        <button className='bt'> 
+         <text className='cnt'>
+            {data.token ? data.token : 0}
+          </text>
+        <h2>Tokens Available</h2>
+        </button>
         <button className='bt'> 
          <text className='cnt'>
             {count ? count : 0}
           </text>
         <h2>My Bookings</h2>
+        </button>
+        <button className='bt'> 
+         <text className='cnt'>
+            {data.session ? data.session : 0}
+          </text>
+        <h2>Total Sessions</h2>
         </button>
         </div>
           </>
