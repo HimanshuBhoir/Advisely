@@ -10,7 +10,7 @@ function Unverified() {
   useEffect(() => {
     axios({
       method: 'get',
-      url: 'http://localhost:3000/profession/unverified',
+      url: 'https://advisely-mini.onrender.com/profession/unverified',
       headers: {
         'Content-Type': 'application/json'
       }

@@ -14,7 +14,7 @@ function Csignup() {
     event.preventDefault();
     axios({
       method: 'post',
-      url: 'http://localhost:3000/consumer/signup',
+      url: 'https://advisely-mini.onrender.com/consumer/signup',
       data: {
         name,
         email,

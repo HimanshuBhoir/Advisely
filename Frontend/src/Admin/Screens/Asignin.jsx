@@ -15,7 +15,7 @@ function Signin() {
     event.preventDefault();
     axios({
       method: 'post',
-      url: 'http://localhost:3000/admin/signin',
+      url: 'https://advisely-mini.onrender.com/admin/signin',
       data: {
         adminuid: email,
         adminpass: password

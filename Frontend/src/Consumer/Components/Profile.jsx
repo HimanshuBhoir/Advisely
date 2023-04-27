@@ -10,7 +10,7 @@ function Profile() {
   useEffect(() => {
     axios({
       method: 'get',
-      url: 'http://localhost:3000/consumer/personal',
+      url: 'https://advisely-mini.onrender.com/consumer/personal',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `${localStorage.getItem("conjwt")}`,
@@ -26,7 +26,7 @@ function Profile() {
 
     axios({
       method: 'get',
-      url: 'http://localhost:3000/booking/mycount',
+      url: 'https://advisely-mini.onrender.com/booking/mycount',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `${localStorage.getItem("conjwt")}`,

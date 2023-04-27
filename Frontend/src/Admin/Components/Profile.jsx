@@ -13,7 +13,7 @@ function Profile() {
   useEffect(() => {
     axios({
       method: 'get',
-      url: 'http://localhost:3000/profession/vcount'
+      url: 'https://advisely-mini.onrender.com/profession/vcount'
     })
     .then(res => {
       console.log(res.data)
@@ -25,7 +25,7 @@ function Profile() {
 
     axios({
       method: 'get',
-      url: 'http://localhost:3000/profession/ucount'
+      url: 'https://advisely-mini.onrender.com/profession/ucount'
     })
     .then(res => {
       console.log(res.data)
@@ -37,7 +37,7 @@ function Profile() {
 
     axios({
       method: 'get',
-      url: 'http://localhost:3000/booking/count'
+      url: 'https://advisely-mini.onrender.com/booking/count'
     })
     .then(res => {
       console.log(res.data)

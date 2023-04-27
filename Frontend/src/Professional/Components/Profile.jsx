@@ -11,7 +11,7 @@ function Profile() {
   useEffect(() => {
     axios({
       method: 'get',
-      url: 'http://localhost:3000/professional/personal',
+      url: 'https://advisely-mini.onrender.com/professional/personal',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `${localStorage.getItem("profjwt")}`,
@@ -26,7 +26,7 @@ function Profile() {
 
     axios({
       method: 'get',
-      url: 'http://localhost:3000/booking/pccount',
+      url: 'https://advisely-mini.onrender.com/booking/pccount',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `${localStorage.getItem("profjwt")}`,
@@ -41,7 +41,7 @@ function Profile() {
 
     axios({
       method: 'get',
-      url: 'http://localhost:3000/booking/pcount',
+      url: 'https://advisely-mini.onrender.com/booking/pcount',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `${localStorage.getItem("profjwt")}`,

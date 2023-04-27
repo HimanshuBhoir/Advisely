@@ -10,7 +10,7 @@ function Confirmed() {
   useEffect(() => {
     axios({
       method: 'get',
-      url: 'http://localhost:3000/booking/confirmed',
+      url: 'https://advisely-mini.onrender.com/booking/confirmed',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `${localStorage.getItem("profjwt")}`,

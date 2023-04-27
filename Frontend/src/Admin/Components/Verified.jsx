@@ -9,7 +9,7 @@ function Verified() {
   useEffect(() => {
     axios({
       method: 'get',
-      url: 'http://localhost:3000/profession/verified',
+      url: 'https://advisely-mini.onrender.com/profession/verified',
       headers: {
         'Content-Type': 'application/json'
       }
@@ -26,7 +26,7 @@ function Verified() {
   const handleVerify = (_id) => {
     axios({
       method: 'delete',
-      url: 'http://localhost:3000/profession/removeprof',
+      url: 'https://advisely-mini.onrender.com/removeprof',
       data: {
         _id
       },

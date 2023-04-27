@@ -10,7 +10,7 @@ function Bookings() {
   useEffect(() => {
     axios({
       method: 'get',
-      url: 'http://localhost:3000/booking/consumerbooking',
+      url: 'https://advisely-mini.onrender.com/booking/consumerbooking',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `${localStorage.getItem("conjwt")}`,
@@ -28,7 +28,7 @@ function Bookings() {
   const handleUnbook = (_id) => {
     axios({
       method: 'delete',
-      url: 'http://localhost:3000/booking/unbook',
+      url: 'https://advisely-mini.onrender.com/booking/unbook',
       data: {
         _id
       },

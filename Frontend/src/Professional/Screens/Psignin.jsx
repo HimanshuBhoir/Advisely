@@ -13,7 +13,7 @@ function Psignin() {
     event.preventDefault();
     axios({
       method: 'post',
-      url: 'http://localhost:3000/professional/signin',
+      url: 'https://advisely-mini.onrender.com/professional/signin',
       data: {
         email,
         password

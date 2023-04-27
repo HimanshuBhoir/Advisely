@@ -12,7 +12,7 @@ function Myprofession() {
   useEffect(() => {
     axios({
       method: 'get',
-      url: 'http://localhost:3000/profession/myprofessions',
+      url: 'https://advisely-mini.onrender.com/profession/myprofessions',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `${localStorage.getItem("profjwt")}`,

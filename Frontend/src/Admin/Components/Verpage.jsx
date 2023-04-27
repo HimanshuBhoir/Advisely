@@ -10,7 +10,7 @@ function Verpage() {
     useEffect(() => {
         axios({
           method: 'get',
-          url: `http://localhost:3000/profession/ver/${id}`,
+          url: `https://advisely-mini.onrender.com/profession/ver/${id}`,
           headers: {
             'Content-Type': 'application/json'
           }
@@ -27,7 +27,7 @@ function Verpage() {
       const handleAccept = (_id) => {
         axios({
             method: 'put',
-            url: 'http://localhost:3000/profession/verify',
+            url: 'https://advisely-mini.onrender.com/profession/verify',
             data: {
               _id
             },
@@ -46,7 +46,7 @@ function Verpage() {
       const handleReject = (_id) => {
         axios({
             method: 'delete',
-            url: 'http://localhost:3000/profession/removeprof',
+            url: 'https://advisely-mini.onrender.com/profession/removeprof',
             data: {
               _id
             },

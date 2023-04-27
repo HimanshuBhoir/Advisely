@@ -12,7 +12,7 @@ function Services() {
   useEffect(() => {
     axios({
       method: 'get',
-      url: 'http://localhost:3000/profession/verified',
+      url: 'https://advisely-mini.onrender.com/profession/verified',
       headers: {
         'Content-Type': 'application/json'
       }

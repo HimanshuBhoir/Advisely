@@ -15,7 +15,7 @@ function Single() {
   useEffect(() => {
     axios({
       method: 'get',
-      url: `http://localhost:3000/profession/${id}`,
+      url: `https://advisely-mini.onrender.com/profession/${id}`,
       headers: {
         'Content-Type': 'application/json'
       }
@@ -32,7 +32,7 @@ function Single() {
   const handleBook = (professionId,postedById) => {
     axios({
       method: 'post',
-      url: 'http://localhost:3000/booking/book',
+      url: 'https://advisely-mini.onrender.com/booking/book',
       data: {
         professionId,
         appointmenttime,

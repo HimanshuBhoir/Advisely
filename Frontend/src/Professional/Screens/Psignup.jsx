@@ -15,7 +15,7 @@ function Psignup() {
     event.preventDefault();
     axios({
       method: 'post',
-      url: 'http://localhost:3000/professional/signup',
+      url: 'https://advisely-mini.onrender.com/professional/signup',
       data: {
         name,
         email,

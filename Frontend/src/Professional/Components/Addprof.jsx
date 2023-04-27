@@ -33,7 +33,7 @@ function Addprof() {
 
     axios({
         method: 'post',
-        url: 'http://localhost:3000/profession/addprof',
+        url: 'https://advisely-mini.onrender.com/profession/addprof',
         data: {
           professionname,
           description,

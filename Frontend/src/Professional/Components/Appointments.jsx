@@ -9,7 +9,7 @@ function Appointments() {
   useEffect(() => {
     axios({
       method: 'get',
-      url: 'http://localhost:3000/booking/appointment',
+      url: 'https://advisely-mini.onrender.com/booking/appointment',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `${localStorage.getItem("profjwt")}`,
@@ -27,7 +27,7 @@ function Appointments() {
   const handleUnbook = (_id) => {
     axios({
       method: 'delete',
-      url: 'http://localhost:3000/booking/unbook',
+      url: 'https://advisely-mini.onrender.com/booking/unbook',
       data: {
         _id
       },
@@ -47,7 +47,7 @@ function Appointments() {
   const handleAccept = (_id) => {
     axios({
       method: 'put',
-      url: 'http://localhost:3000/booking/accept',
+      url: 'https://advisely-mini.onrender.com/booking/accept',
       data: {
         _id
       },
