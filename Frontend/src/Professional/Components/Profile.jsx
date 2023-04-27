@@ -82,6 +82,13 @@ function Profile() {
         <h2>Pending Appointments</h2>
         </button>
 
+        <button className='bt'> 
+         <text className='cnt'>
+            0
+          </text>
+        <h2>Sessions</h2>
+        </button>
+
         </div>
           </>
         ) : (

@@ -26,7 +26,7 @@ function Verified() {
   const handleVerify = (_id) => {
     axios({
       method: 'delete',
-      url: 'https://advisely-mini.onrender.com/removeprof',
+      url: 'https://advisely-mini.onrender.com/profession/removeprof',
       data: {
         _id
       },
